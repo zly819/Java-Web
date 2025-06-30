@@ -50,7 +50,48 @@
 
 
     <script>
-       
+        // 需求：表单校验--用户名：长度在4-16位；手机号：长度11位
+        // 分析：JS事件--鼠标离焦事件blur, 表单提交事件submit,, DOM操作
+        // 校验用户名
+        // 1.获取dom元素
+        let input = document.querySelector("#username");
+        let checkUsername = () => {
+            let flag = true;//用来标识用户名是否合法
+            let usernameValue = input.value;
+            if (usernameValue.length < 4 || usernameValue.length > 16) {
+                // alert("用户名长度不合法");
+                document.querySelector("#name_msg").innerHTML = "用户名长度不合法";
+                flag = false;
+            } else {
+                document.querySelector("#name_msg").innerHTML = "";
+            }
+            return flag;
+        }
+        input.addEventListener('blur', checkUsername)
+
+        let input2 = document.querySelector("#phone");
+        let checkPhone = () => {
+            let flag = true;
+            let phoneValue = input2.value;
+            if (phoneValue.length != 11) {
+                // alert("手机号不合法");
+                document.querySelector("#phone_msg").innerHTML = "手机号不合法";
+                flag = false;
+            } else {
+                document.querySelector("#phone_msg").innerHTML = "";
+            }
+            return flag;
+        }
+        input2.addEventListener('blur', checkPhone);
+
+        // 表单提交时，需要校验整个表单是否合法，如果不合法不让提交
+        document.querySelector("form").addEventListener("submit", (event) => {
+            if (!checkUsername() || !checkPhone()) {
+                alert("用户名或手机号不合法！");
+                //阻止表单提交
+                event.preventDefault();
+            }
+        })
 
 
     </script>
