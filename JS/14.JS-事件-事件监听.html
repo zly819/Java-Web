@@ -13,9 +13,20 @@
     <input type="button" id="btn2" value="点我一下试试2">
 
     <script>
-
-
-
+        // 1.事件监听【推荐】--可以绑定多个事件
+        document.querySelector("#btn1").addEventListener("click", function () {
+            alert("输出第一次");
+        })
+        document.querySelector("#btn1").onclick = () => {
+            alert("输出第二次");
+        }
+        // 2.事件监听（早期版本）--调用事件属性---只能绑定一次，后面的会覆盖前面
+        document.querySelector("#btn2").addEventListener('click', function () {
+            alert("输出第三次");
+        })
+        document.querySelector("#btn2").onclick = () => {
+            alert("输出第四次");
+        }
     </script>
 </body>
 
