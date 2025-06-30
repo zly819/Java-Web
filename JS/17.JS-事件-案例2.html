@@ -58,7 +58,7 @@
         let checkUsername = () => {
             let flag = true;//用来标识用户名是否合法
             let usernameValue = input.value;
-            if (usernameValue.length < 4 || usernameValue.length > 16) {
+            if (!/\w{4,16}/.test(usernameValue)) {
                 // alert("用户名长度不合法");
                 document.querySelector("#name_msg").innerHTML = "用户名长度不合法";
                 flag = false;
@@ -73,7 +73,7 @@
         let checkPhone = () => {
             let flag = true;
             let phoneValue = input2.value;
-            if (phoneValue.length != 11) {
+            if (!/^1[3-9]\d{9}$/.test(phoneValue)) {
                 // alert("手机号不合法");
                 document.querySelector("#phone_msg").innerHTML = "手机号不合法";
                 flag = false;
