@@ -9,11 +9,33 @@
 </head>
 
 <body>
-
-
     <script>
+        // Window窗口对象
+        // window.alert("Hello window...");
+        // alert("Hello window222222");
 
+        // confirm --确认提示框，点击确认返回true, 点击取消返回false
+        // let flag = confirm("确认删除？");
+        // console.log(flag);
 
+        // setInterval --周期性的定时器, 参数1代表要触发的函数【会触发多次】，参数2代表时间，单位是ms
+        let i = 0;
+        setInterval(() => {
+            console.log("定时器执行" + i + "次");
+            i++;
+        }, 1000);
+
+        // setTimeout --延迟定时器，只会触发一次
+        setTimeout(() => {
+            console.log("3秒时间到！");
+        }, 3000);
+
+        // Location地址栏对象
+        // window.location
+        alert(location.href);
+        // 设置url地址--页面会自动跳转
+        location.href = "https://github.com/zly819"
     </script>
 </body>
+
 </html>
