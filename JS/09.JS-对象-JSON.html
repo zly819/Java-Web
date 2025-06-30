@@ -13,8 +13,25 @@
 
     <script>
         //1. 自定义JS对象
-
+        let user = {
+            name: "tom",
+            age: 22,
+            sex: "男",
+            sing() {
+                console.log("123456");
+            }
+        }
+        //调用对象的属性和方法
+        console.log(`姓名：${user.name}今年${user.age}岁`);
+        user.sing();
         //2. JSON对象
+        let jsonStr = '{ "name": "tom", "age": 18, "address": ["杭州", "南京", "武汉"]}';
+        // JSON字符串---》JS对象 
+        let jsObj = JSON.parse(jsonStr);
+        console.log(jsObj.name + ":" + jsObj.age);
+        let jsonstr2 = JSON.stringify(jsObj);
+        console.log(jsonstr2);
+
 
     </script>
 </body>
