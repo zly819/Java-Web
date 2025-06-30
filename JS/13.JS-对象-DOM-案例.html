@@ -20,7 +20,22 @@
     </div>
 
     <script>
-        
+        // 需求：进行时间倒计时，倒计时结束后，自动跳转到官网首页
+        // 分析：DOM操作、周期性的定时器setInterval、location的地址修改
+        // 1.获取dom元素对象
+        let span = document.querySelector("#time");
+        let timevalue = span.innerHTML;
+        //每过一秒就需要将时间减一
+        setInterval(() => {
+            // 2.操作元素内容
+            timevalue--;
+            if (timevalue <= 0) {
+                //进行页面跳转
+                location.href = "https://www.jd.com";
+            }
+            span.innerHTML = timevalue;
+        }, 1000);
+
     </script>
 </body>
 
