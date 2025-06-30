@@ -13,10 +13,31 @@
 
     <script>
         //1. 创建字符串
+        let str = 'Hello String'
+        console.log(str);
+
 
         //2. 字符串属性 - length
+        console.log('字符串长度 = ' + str.length);
 
         //3. 字符串方法 - charAt , indexOf , trim , substring
+        //charAt 获取指定索引位置的字符
+        console.log(str.charAt(6));
+        //indexOf 获取指定字符的第一个索引位置
+        console.log(str.indexOf('llo'));
+        // trim: 去除两边空格
+        let str2 = "      Hello String     ";
+        console.log(str2);
+        console.log("str2长度=" + str.length);
+        console.log(str2.trim());
+        // substring: 截取指定位置字符  --包左不包右
+        console.log(str.substring(2, 5));
+
+
+
+
+
+
 
     </script>
 </body>
