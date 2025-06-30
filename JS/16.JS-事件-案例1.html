@@ -103,6 +103,28 @@
     </table>
 
     <script>
+        // 需求：实现表格隔行换色效果
+        // 分析：事件--鼠标移入、移出事件，DOM操作tr元素，添加样式  style="background-color: antiquewhite;"
+        // 1.获取dom元素
+        let trs = document.querySelectorAll(".data");
+        for (let i = 0; i < trs.length; i++) {
+            const tr = trs[i];
+            //鼠标移入事件
+            tr.addEventListener("mouseenter", () => {
+                if (i % 2 == 0) {
+                    tr.style = "background-color: #D9D9FA;"
+                } else {
+                    tr.style = "background-color: #FBFBD4;"
+                }
+            })
+            //鼠标移出事件
+            tr.addEventListener("mouseleave", () => {
+                tr.style = "background-color: #FFF;"
+            })
+
+
+        }
+
 
 
     </script>
