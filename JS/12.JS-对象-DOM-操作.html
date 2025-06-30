@@ -14,7 +14,19 @@
     <span class="txt">DOM元素3</span><br>
 
     <script>
+        // 通过document对象获取元素对象
+        // 1.通过css选择器获取单个元素对象--如果存在多个，只返回第一个
+        let s1 = document.querySelector("#sid");
+        // alert(s1);
+        // 需求：将 DOM元素1 修改成 Hello Dom
+        // alert(s1.innerHTML);
+        s1.innerHTML = "Hello dom";
 
+        // 2.通过css选择器获取所有元素对象
+        let s2 = document.querySelectorAll('.txt');
+        s2.forEach((s) => {
+            s.innerHTML = "Hello DOM";
+        })
 
 
     </script>
