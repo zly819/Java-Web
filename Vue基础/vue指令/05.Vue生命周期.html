@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <p v-for="(name, index) in names">{{index + 1}} : {{name}}</p>
+  </div>
+  <script type="module">
+    import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+    createApp({
+      //数据模型
+      data(){
+        return {
+          names: ['张无忌', '张三丰', '韦一笑', '殷天正']
+        }
+      },
+      //定义函数
+      methods: {
+        
+      },
+      //钩子方法
+      created() {
+        console.log("对象创建完成...");
+      },
+      mounted() {
+        console.log("页面挂载完成...");
+      },
+    }).mount('#app')
+  </script>
+
+</body>
+
+</html>
