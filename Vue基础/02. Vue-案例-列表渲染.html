@@ -71,24 +71,14 @@
         <th>更新时间</th>
       </tr>
 
-      <tr>
-        <td>1</td>
-        <td>Tom</td>
-        <td> <img src="https://web-framework.oss-cn-hangzhou.aliyuncs.com/cat.jpg"> </td>
-        <td>男</td>
-        <td>班主任</td>
-        <td>2015-03-01</td>
-        <td>2015-05-01 12:05:00</td>
-      </tr>
-
-      <tr>
-        <td>2</td>
-        <td>Rose</td>
-        <td> <img src="https://web-framework.oss-cn-hangzhou.aliyuncs.com/cat.jpg"> </td>
-        <td>女</td>
-        <td>讲师</td>
-        <td>2017-03-15</td>
-        <td>2015-05-10 13:05:00</td>
+      <tr v-for="(user, index) in userList" :key="user.id">
+        <td>{{index + 1}}</td>
+        <td>{{user.name}}</td>
+        <td> <img src="{{user.image}}"> </td>
+        <td>{{user.gender}}</td>
+        <td>{{user.job}}</td>
+        <td>{{user.entrydate}}</td>
+        <td>{{user.updatetime}}</td>
       </tr>
     </table>
   </div>

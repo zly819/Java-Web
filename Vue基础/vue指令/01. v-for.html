@@ -8,10 +8,8 @@
 <body>
   
   <div id="app">
-    <p>张无忌</p>
-    <p>张三丰</p>
-    <p>韦一笑</p>
-    <p>殷天正</p>
+    <!-- <p v-for="name in names">{{name}}</p> -->
+     <p v-for="(name, index) in names">{{index + 1}}:{{name}}</p>
   </div>
   
   <script type="module">
