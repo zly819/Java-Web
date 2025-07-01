@@ -20,13 +20,9 @@
         document.querySelector("#btnGet").addEventListener('click',
             function () {
                 //调用axios发送get请求 https://mock.apifox.cn/m1/3083103-0-default/emps/list
-                axios({
-                    method: 'GET',
-                    url: 'https://mock.apifox.cn/m1/3083103-0-default/emps/list'
-                }).then((result) => {//成功回调函数
+                //别名方式
+                axios.get('https://mock.apifox.cn/m1/3083103-0-default/emps/list').then((result) =>{
                     console.log(result.data);
-                }).catch((err) => {//失败回调函数
-                    alert(err)
                 })
             }
         )
@@ -34,14 +30,9 @@
         document.querySelector("#btnPost").addEventListener('click',
             function () {
                 //调用axios发送get请求 https://mock.apifox.cn/m1/3083103-0-default/emps/update
-                axios({
-                    method: 'POST',
-                    url: 'https://mock.apifox.cn/m1/3083103-0-default/emps/update'
-                    
-                }).then((result) => {//成功回调函数
+                //使用别名
+                axios.post('https://mock.apifox.cn/m1/3083103-0-default/emps/update', 'id = 1').then((result) =>{
                     console.log(result.data);
-                }).catch((err) => {//失败回调函数
-                    alert(err)
                 })
             }
         );
