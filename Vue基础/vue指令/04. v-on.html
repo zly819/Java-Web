@@ -1,26 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>v-on入门</title>
 </head>
+
 <body>
-  
+
   <div id="app">
-    <input type="button" value="点我一下试试">
-    <input type="button" value="再点我一下试试">
+    <input type="button" value="点我一下试试" v-on:click="console.log('试试就试试1')">
+    <input type="button" value="再点我一下试试" v-on:click="handle">
+    <input type="button" value="再点我一下试试3" @click="handle">
   </div>
-  
+
   <script type="module">
     import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
     createApp({
-      data(){
+      //数据模型
+      data() {
         return {
           name: 'Vue'
+        }
+      },
+      //定义函数
+      methods: {
+        handle() {
+          console.log('试试就试试3');
         }
       }
     }).mount('#app')
   </script>
 </body>
+
 </html>

@@ -57,10 +57,8 @@
         <option value="3">其他</option>
       </select>
 
-      <input class="btn" type="button" value="查询">
+      <input class="btn" type="button" value="查询" @click="search">
     </div>
-
-    {{name}} == {{gender}} == {{job}}
 
     <table>
       <tr>
@@ -141,7 +139,14 @@
           ]
         }
       },
+      methods: {
+        search(){
+          //输出搜索框中的数据
+          console.log(`姓名：${this.name},性别:${this.gender},职位:${this.job}`);
+        }
+      },
     }).mount("#app");
+    
   </script>
 </body>
 
