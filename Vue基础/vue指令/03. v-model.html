@@ -8,7 +8,7 @@
 <body>
   
   <div id="app">
-    <input type="text">
+    <input type="text" v-model="name"> {{name}}
   </div>
   
   <script type="module">
@@ -16,7 +16,7 @@
     createApp({
       data(){
         return {
-          
+          name: 'tom'
         }
       }
     }).mount('#app')

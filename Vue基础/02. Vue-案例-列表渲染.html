@@ -44,14 +44,14 @@
 <body>
   <div id="app">
     <div id="center">
-      姓名: <input type="text" name="name">
+      姓名: <input type="text" name="name" v-model="name">
       性别:
-      <select name="gender">
+      <select name="gender" v-model="gender">
         <option value="1">男</option>
         <option value="2">女</option>
       </select>
       职位:
-      <select name="job">
+      <select name="job" v-model="job">
         <option value="1">讲师</option>
         <option value="2">班主任</option>
         <option value="3">其他</option>
@@ -59,6 +59,8 @@
 
       <input class="btn" type="button" value="查询">
     </div>
+
+    {{name}} == {{gender}} == {{job}}
 
     <table>
       <tr>
@@ -96,6 +98,9 @@
     createApp({
       data() {
         return {
+          name:'',
+          gender:'',
+          job:'',
           userList: [
             {
               "id": 1,
