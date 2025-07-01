@@ -74,7 +74,7 @@
       <tr v-for="(user, index) in userList" :key="user.id">
         <td>{{index + 1}}</td>
         <td>{{user.name}}</td>
-        <td> <img src="{{user.image}}"> </td>
+        <td> <img :src="user.image"> </td>
         <td>{{user.gender}}</td>
         <td>{{user.job}}</td>
         <td>{{user.entrydate}}</td>

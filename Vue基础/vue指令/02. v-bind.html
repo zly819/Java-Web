@@ -8,9 +8,9 @@
 <body>
   
   <div id="app">
-    <a href="https://www.itcast.cn">链接1</a>
+    <a v-bind:href="url">链接1</a>
     <br><br>
-    <a href="https://www.itcast.cn">链接2</a>
+    <a :href="url">链接2</a>
   </div>
   
   <script type="module">
@@ -18,7 +18,7 @@
     createApp({
       data(){
         return {
-          
+          url:"https://www.4399.com"
         }
       }
     }).mount('#app')
