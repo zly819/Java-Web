@@ -1,11 +1,32 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vue-快速入门</title>
 </head>
-<body>
 
+<body>
+  <!-- 3.准备视图元素 -->
+  <div id="app">
+    <!-- 5.通过插值表达式进行数据渲染 -->
+    <h1>{{message}}</h1>
+  </div>
+  <script type="module">
+    //1.引入Vue模块
+    import { createApp, ref } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+
+    //2.创建Vue实例，并绑定视图
+    createApp({
+      //4.定义数据模型
+      data() {
+        return {
+          message: 'Hello Vue'
+        }
+      }
+    }).mount('#app')
+  </script>
 </body>
+
 </html>
