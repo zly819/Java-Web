@@ -1,8 +1,11 @@
 package com.itheima.controller;
 
 import com.itheima.entity.Dept;
+import com.itheima.entity.Result;
 import org.apache.commons.io.IOUtils;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.io.InputStream;
@@ -21,8 +24,9 @@ public class DeptController {
      * 部门列表查询
      * @return
      */
-    @RequestMapping("/depts")
-    public List<Dept> getAll(){
+//    @RequestMapping(value = "/depts",method = RequestMethod.GET)       --->等价于下一行
+    @GetMapping("/depts")  //限制请求方式为Get
+    public Result getAll(){
         //1.加载并读取dept.txt文件
         //通过类加载器，可以获取到类路径下的所有资源
         InputStream input = this.getClass().getClassLoader().getResourceAsStream("dept.txt");
@@ -39,6 +43,6 @@ public class DeptController {
         }).toList();
 
         //3.响应数据(json格式)
-        return depts;
+        return Result.success(depts);
     }
 }
