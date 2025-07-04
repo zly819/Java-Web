@@ -10,7 +10,7 @@ import java.util.List;
  * @version 1.0
  * 数据访问层
  */
-public class DeptDaoImpl {
+public class DeptDaoImpl implements DeptDao {
 
     public List<String> list(){
         //1.加载并读取dept.txt文件

@@ -1,5 +1,6 @@
 package com.itheima.service;
 
+import com.itheima.dao.DeptDao;
 import com.itheima.dao.DeptDaoImpl;
 import com.itheima.entity.Dept;
 
@@ -12,9 +13,9 @@ import java.util.List;
  * @version 1.0
  * 业务逻辑处理层
  */
-public class DeptServiceImpl {
+public class DeptServiceImpl implements DeptService {
 
-    private DeptDaoImpl deptDao = new DeptDaoImpl();
+    private DeptDao deptDao = new DeptDaoImpl();
 
     public List<Dept> list(){
         //1.获取原始数据

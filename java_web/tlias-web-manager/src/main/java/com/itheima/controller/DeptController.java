@@ -2,6 +2,7 @@ package com.itheima.controller;
 
 import com.itheima.entity.Dept;
 import com.itheima.entity.Result;
+import com.itheima.service.DeptService;
 import com.itheima.service.DeptServiceImpl;
 import org.apache.commons.io.IOUtils;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,7 @@ import java.util.List;
 @RestController
 public class DeptController {
 
-    private DeptServiceImpl deptService = new DeptServiceImpl();
+    private DeptService deptService = new DeptServiceImpl();
 
     @GetMapping("/depts")  //限制请求方式为Get
     public Result getAll() {
