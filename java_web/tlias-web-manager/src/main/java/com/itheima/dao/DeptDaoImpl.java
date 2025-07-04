@@ -1,6 +1,7 @@
 package com.itheima.dao;
 
 import org.apache.commons.io.IOUtils;
+import org.springframework.stereotype.Component;
 
 import java.io.InputStream;
 import java.util.List;
@@ -10,6 +11,7 @@ import java.util.List;
  * @version 1.0
  * 数据访问层
  */
+@Component  //程序启动时，会自动创建该类对象，并交由IOC容器管理
 public class DeptDaoImpl implements DeptDao {
 
     public List<String> list(){

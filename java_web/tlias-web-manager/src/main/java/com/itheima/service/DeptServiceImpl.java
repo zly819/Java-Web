@@ -3,6 +3,8 @@ package com.itheima.service;
 import com.itheima.dao.DeptDao;
 import com.itheima.dao.DeptDaoImpl;
 import com.itheima.entity.Dept;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -13,9 +15,10 @@ import java.util.List;
  * @version 1.0
  * 业务逻辑处理层
  */
+@Component  //程序启动时，会自动创建该类对象，并交由IOC容器管理
 public class DeptServiceImpl implements DeptService {
-
-    private DeptDao deptDao = new DeptDaoImpl();
+    @Autowired //从IOC容器中，自动寻找bean对象，并为该变量赋值
+    private DeptDao deptDao;
 
     public List<Dept> list(){
         //1.获取原始数据
