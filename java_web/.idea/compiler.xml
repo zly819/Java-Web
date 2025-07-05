@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="jdbc-demo" />
+        <module name="springboot-mybatis-quickstart" />
+        <module name="tlias-web-manager" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="maven-project01" target="1.8" />
+      <module name="maven-project02" target="1.8" />
+      <module name="maven-projectA" target="1.8" />
+      <module name="maven-projectB" target="1.8" />
+      <module name="maven-projectC" target="1.8" />
+      <module name="servlet_demo" target="1.8" />
+      <module name="springboot_web_quickstart02" target="1.8" />
+      <module name="tlias-web-manger" target="21" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="springboot-mybatis-quickstart" options="-parameters" />
+      <module name="springboot_web_quickstart02" options="-parameters" />
+      <module name="tlias-web-manager" options="-parameters" />
+      <module name="tlias-web-manger" options="-parameters" />
+    </option>
+  </component>
+</project>
