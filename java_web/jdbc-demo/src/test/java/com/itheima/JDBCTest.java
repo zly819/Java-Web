@@ -32,8 +32,15 @@ public class JDBCTest {
         connection.close();
     }
 
+    /**
+     * 存在SQL注入问题
+     * @param uname
+     * @param pwd
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     */
     @ParameterizedTest //参数化测试
-    @CsvSource(value = {"xiaoqiao,123456","daqiao,12345678"})
+    @CsvSource(value = {"xiaoqiao,123456","zhangsan,' or '1' = '1"})
     public void testSelect(String uname, String pwd) throws ClassNotFoundException, SQLException {
         Class.forName("com.mysql.cj.jdbc.Driver");
         Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java147_db02","root","123456");
@@ -51,6 +58,42 @@ public class JDBCTest {
         }
         resultSet.close();
         statement.close();
+        connection.close();
+    }
+
+    /**
+     * 预编译sql,解决SQL注入问题
+     * @param uname
+     * @param pwd
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     */
+    @ParameterizedTest //参数化测试
+    @CsvSource(value = {"xiaoqiao,123456","zhangsan,' or '1' = '1"})
+    public void testSelect2(String uname, String pwd) throws ClassNotFoundException, SQLException {
+        Class.forName("com.mysql.cj.jdbc.Driver");
+
+        Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/java147_db02","root","123456");
+
+        PreparedStatement ps = connection.prepareStatement("select * from user where username = ? and password = ?");
+
+        ps.setString(1,uname);
+        ps.setString(2,pwd);
+
+        ResultSet resultSet = ps.executeQuery();
+
+        while(resultSet.next()) {
+            //输出结果
+            int id = resultSet.getInt("id");
+            String username = resultSet.getString("username");
+            String password = resultSet.getString("password");
+            String name = resultSet.getString("name");
+            int age = resultSet.getInt("age");
+            User user = new User(id, username, password, name, age);
+            System.out.println(user);
+        }
+        resultSet.close();
+        ps.close();
         connection.close();
     }
 }
