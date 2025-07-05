@@ -9,6 +9,6 @@ import java.util.List;
 public interface UserMapper {
 
     //查询所有用户数据
-    @Select("select * from user")
+//    @Select("select id, username, password, name, age from user")
     public List<User> list();
 }
